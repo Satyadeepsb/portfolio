@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Satyadeep Basugade - Full Stack Developer</title>
+      <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+         }
+
+         body {
+            font-family: "Calibri", "Arial", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+         }
+
+         .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px 50px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+         }
+
+         .header {
+            text-align: center;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+         }
+
+         .header h1 {
+            font-size: 30px;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-weight: 700;
+            letter-spacing: 1px;
+         }
+
+         .header .title {
+            font-size: 18px;
+            color: #3498db;
+            font-weight: 600;
+            margin-bottom: 12px;
+         }
+
+         .contact-info {
+            font-size: 14px;
+            color: #555;
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+         }
+
+         .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+         }
+
+         .contact-info a:hover {
+            text-decoration: underline;
+         }
+
+         .section {
+            margin-bottom: 28px;
+         }
+
+         .section-title {
+            font-size: 20px;
+            color: #2c3e50;
+            font-weight: 700;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 6px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+         }
+
+         .summary {
+            text-align: justify;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #444;
+         }
+
+         .experience-item {
+            margin-bottom: 50px;
+         }
+
+         .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+         }
+
+         .job-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #2c3e50;
+         }
+
+         .job-duration {
+            font-size: 13px;
+            color: #7f8c8d;
+            font-style: italic;
+         }
+
+         .company-name {
+            font-size: 18px;
+            color: #3498db;
+            font-weight: 600;
+         }
+
+         .project-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #34495e;
+            margin-top: 12px;
+            margin-bottom: 6px;
+         }
+
+         ul {
+            margin-left: 20px;
+            margin-bottom: 10px;
+         }
+
+         li {
+            font-size: 13px;
+            margin-bottom: 5px;
+            color: #555;
+            line-height: 1.6;
+         }
+
+         .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+         }
+
+         .skill-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+         }
+
+         .skill-label {
+            font-weight: 700;
+            font-size: 14px;
+            color: #003366;
+         }
+
+         .skill-icons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* ✅ EXACTLY 4 PER ROW */
+            gap: 16px;
+         }
+
+         .skill-icon-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 11px;
+            color: #444;
+            text-align: center;
+         }
+
+         .skill-icon-box img {
+            width: 36px;
+            height: 36px;
+            margin-bottom: 6px;
+         }
+
+         @media (max-width: 768px) {
+            .skills-grid {
+               grid-template-columns: 1fr;
+            }
+            .skill-icons {
+               grid-template-columns: repeat(2, 1fr);
+            }
+         }
+
+         .education-item {
+            margin-bottom: 25px;
+         }
+
+         .degree {
+            font-size: 14px;
+            font-weight: 700;
+            color: #2c3e50;
+         }
+
+         .institution {
+            font-size: 13px;
+            color: #3498db;
+            font-weight: 600;
+         }
+
+         .year {
+            font-size: 13px;
+            color: #7f8c8d;
+            font-style: italic;
+         }
+
+         .certifications-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            list-style: none;
+            margin-left: 0;
+         }
+
+         .certifications-list li {
+            padding: 6px 10px;
+            background: #ecf0f1;
+            border-left: 3px solid #3498db;
+            font-size: 13px;
+         }
+
+         .awards-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            margin-top: 10px;
+         }
+
+         .awards-table th {
+            background: #34495e;
+            color: white;
+            padding: 8px;
+            text-align: left;
+            font-weight: 600;
+         }
+
+         .awards-table td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+         }
+
+         .awards-table tr:hover {
+            background: #f8f9fa;
+         }
+
+         .highlight {
+            background: linear-gradient(120deg, #3498db20 0%, #3498db20 100%);
+            padding: 2px 4px;
+            border-radius: 2px;
+         }
+
+         @media print {
+            body {
+               background: white;
+               padding: 0;
+            }
+
+            .container {
+               box-shadow: none;
+               padding: 20px;
+            }
+         }
+         /* ✅ FULL-WIDTH FRAMEWORK ROW */
+         .frameworks-row {
+            margin: 10px 0 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+         }
+
+         .framework-title {
+            font-weight: 700;
+            font-size: 14px;
+            color: #003366;
+         }
+
+         /* ✅ FORCE SINGLE ROW */
+         .framework-icons {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr); /* 7 icons = 1 row */
+            gap: 12px;
+            align-items: center;
+         }
+
+         .framework-icons .skill-icon-box img {
+            width: 30px;
+            height: 30px;
+         }
+
+         /* ✅ MOBILE FALLBACK */
+         @media (max-width: 768px) {
+            .framework-icons {
+               grid-template-columns: repeat(4, 1fr);
+            }
+         }
+      </style>
+   </head>
+   <body>
+      <div class="container">
+         <div class="header">
+            <h1>SATYADEEP BASUGADE</h1>
+            <div class="title">Senior Full Stack Developer</div>
+            <div class="contact-info">
+               <span> Pune, Maharashtra, India</span> |
+               <span> <a href="tel:+918421376507"> +91-8421376507 </a></span> |
+               <span>
+                  <a href="mailto:satyadeepsb@gmail.com"
+                     >satyadeepsb@gmail.com</a
+                  ></span
+               >
+               |
+               <span>
+                  <a
+                     href="https://www.linkedin.com/in/satyadeepbasugade92/"
+                     target="_blank"
+                     >LinkedIn</a
+                  ></span
+               >
+               |
+               <span>
+                  <a href="https://github.com/Satyadeepsb" target="_blank"
+                     >GitHub</a
+                  ></span
+               >
+            </div>
+         </div>
+
+         <div class="section">
+            <h2 class="section-title">CORE TECHNICAL SKILLS</h2>
+
+            <!-- Programming Languages -->
+            <div class="frameworks-row">
+               <span class="framework-title">Programming Languages</span>
+
+               <div class="framework-icons">
+                  <div class="skill-icon-box">
+                     <img src="images/java.png" /><span>Java</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img
+                        src="https://skillicons.dev/icons?i=js&theme=light"
+                     /><span>JavaScript</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img
+                        src="https://skillicons.dev/icons?i=ts&theme=light"
+                     /><span>TypeScript</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img
+                        src="https://skillicons.dev/icons?i=py&theme=light"
+                     /><span>Python</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img
+                        src="https://skillicons.dev/icons?i=solidity&theme=light"
+                     /><span>Solidity</span>
+                  </div>
+               </div>
+            </div>
+            <!-- ✅ FULL-WIDTH FRAMEWORKS ROW -->
+            <div class="frameworks-row">
+               <span class="framework-title">Frameworks & Libraries</span>
+
+               <div class="framework-icons">
+                  <div class="skill-icon-box">
+                     <img
+                        src="https://skillicons.dev/icons?i=spring&theme=light"
+                     /><span>Spring Boot</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img
+                        src="https://skillicons.dev/icons?i=hibernate&theme=light"
+                     /><span>Hibernate</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img
+                        src="https://skillicons.dev/icons?i=nodejs&theme=light"
+                     /><span>Node.js</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img
+                        src="https://skillicons.dev/icons?i=expressjs&theme=light"
+                     /><span>Express.js</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img
+                        src="https://skillicons.dev/icons?i=nextjs&theme=light"
+                     /><span>Next.js</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img
+                        src="https://skillicons.dev/icons?i=nestjs&theme=light"
+                     /><span>NestJS</span>
+                  </div>
+               </div>
+            </div>
+            <div class="frameworks-row">
+               <span class="framework-title"
+                  >Web UI Frameworks & Libraries</span
+               >
+
+               <div class="framework-icons">
+                  <div class="skill-icon-box">
+                     <img
+                        src="https://skillicons.dev/icons?i=react&theme=light"
+                     /><span>React</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img
+                        src="https://skillicons.dev/icons?i=angular&theme=light"
+                     /><span>Angular</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img
+                        src="https://skillicons.dev/icons?i=html&theme=light"
+                     /><span>HTML5</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img
+                        src="https://skillicons.dev/icons?i=css&theme=light"
+                     /><span>CSS3</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img
+                        src="https://skillicons.dev/icons?i=bootstrap&theme=light"
+                     /><span>Bootstrap</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img
+                        src="https://skillicons.dev/icons?i=tailwind&theme=light"
+                     /><span>Tailwind</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img
+                        src="https://skillicons.dev/icons?i=materialui&theme=light"
+                     /><span>Material UI</span>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Build Tools -->
+            <div class="frameworks-row">
+               <span class="framework-title">Build Tools</span>
+
+               <div class="framework-icons">
+                  <div class="skill-icon-box">
+                     <img
+                        src="https://skillicons.dev/icons?i=npm&theme=light"
+                     /><span>NPM</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img
+                        src="https://skillicons.dev/icons?i=yarn&theme=light"
+                     /><span>Yarn</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img
+                        src="https://skillicons.dev/icons?i=pnpm&theme=light"
+                     /><span>PNPM</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img
+                        src="https://skillicons.dev/icons?i=maven&theme=light"
+                     /><span>Maven</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img
+                        src="https://skillicons.dev/icons?i=gradle&theme=light"
+                     /><span>Gradle</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img
+                        src="https://skillicons.dev/icons?i=webpack&theme=light"
+                     /><span>Webpack</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img
+                        src="https://skillicons.dev/icons?i=vite&theme=light"
+                     /><span>Vite</span>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Testing -->
+            <div class="frameworks-row">
+               <span class="framework-title"
+                  >Testing Frameworks & Libraries</span
+               >
+
+               <div class="framework-icons">
+                  <div class="skill-icon-box">
+                     <img src="images/junit.png" /><span>JUnit</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img
+                        src="https://skillicons.dev/icons?i=jest&theme=light"
+                     /><span>Jest</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img src="images/playwright.svg" /><span>Playwright</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img src="images/mocha.svg" /><span>Mocha</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img src="images/mockito.jfif" /><span>Mockito</span>
+                  </div>
+               </div>
+            </div>
+
+            <!-- AI Tools -->
+            <div class="frameworks-row">
+               <span class="framework-title">AI Tools</span>
+
+               <div class="framework-icons">
+                  <div class="skill-icon-box">
+                     <img src="images/claude-ai.webp" /><span>Claude Code</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img src="images/chatgpt-ai.jpg" /><span>ChatGPT</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img src="images/cursor-ai.avif" /><span>Cursor</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img src="images/cody-ai.webp" /><span>Cody</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img src="images/windsurf-ai.png" /><span>Windsurf</span>
+                  </div>
+                  <div class="skill-icon-box">
+                     <img src="images/github-copilot.jpg" /><span
+                        >GitHub Copilot</span
+                     >
+                  </div>
+               </div>
+            </div>
+
+            <div class="skills-grid">
+               <!-- Databases -->
+               <div class="skill-item">
+                  <span class="skill-label">Databases</span>
+                  <div class="skill-icons">
+                     <div class="skill-icon-box">
+                        <img
+                           src="https://skillicons.dev/icons?i=mysql&theme=light"
+                        /><span>MySQL</span>
+                     </div>
+                     <div class="skill-icon-box">
+                        <img
+                           src="https://skillicons.dev/icons?i=postgres&theme=light"
+                        /><span>PostgreSQL</span>
+                     </div>
+                     <div class="skill-icon-box">
+                        <img
+                           src="https://skillicons.dev/icons?i=mongodb&theme=light"
+                        /><span>MongoDB</span>
+                     </div>
+                     <div class="skill-icon-box">
+                        <img
+                           src="https://skillicons.dev/icons?i=firebase&theme=light"
+                        /><span>Firebase</span>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Cloud -->
+               <div class="skill-item">
+                  <span class="skill-label">Cloud Platforms</span>
+                  <div class="skill-icons">
+                     <div class="skill-icon-box">
+                        <img
+                           src="https://skillicons.dev/icons?i=aws&theme=light"
+                        /><span>AWS</span>
+                     </div>
+                     <div class="skill-icon-box">
+                        <img
+                           src="https://skillicons.dev/icons?i=azure&theme=light"
+                        /><span>Azure</span>
+                     </div>
+                     <div class="skill-icon-box">
+                        <img src="images/hostinger.webp" /><span
+                           >Hostinger</span
+                        >
+                     </div>
+                     <div class="skill-icon-box">
+                        <img
+                           src="https://skillicons.dev/icons?i=heroku&theme=light"
+                        /><span>Heroku</span>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- DevOps -->
+               <div class="skill-item">
+                  <span class="skill-label">DevOps (CI/CD)</span>
+                  <div class="skill-icons">
+                     <div class="skill-icon-box">
+                        <img
+                           src="https://skillicons.dev/icons?i=docker&theme=light"
+                        /><span>Docker</span>
+                     </div>
+                     <div class="skill-icon-box">
+                        <img
+                           src="https://skillicons.dev/icons?i=kubernetes&theme=light"
+                        /><span>Kubernetes</span>
+                     </div>
+                     <div class="skill-icon-box">
+                        <img
+                           src="https://skillicons.dev/icons?i=jenkins&theme=light"
+                        /><span>Jenkins</span>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Version Control -->
+               <div class="skill-item">
+                  <span class="skill-label">Version Control</span>
+                  <div class="skill-icons">
+                     <div class="skill-icon-box">
+                        <img
+                           src="https://skillicons.dev/icons?i=git&theme=light"
+                        /><span>Git</span>
+                     </div>
+                     <div class="skill-icon-box">
+                        <img
+                           src="https://skillicons.dev/icons?i=github&theme=light"
+                        /><span>GitHub</span>
+                     </div>
+                     <div class="skill-icon-box">
+                        <img
+                           src="https://skillicons.dev/icons?i=gitlab&theme=light"
+                        /><span>GitLab</span>
+                     </div>
+                     <div class="skill-icon-box">
+                        <img
+                           src="https://skillicons.dev/icons?i=bitbucket&theme=light"
+                        /><span>Bitbucket</span>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Observability & Monitoring -->
+               <div class="skill-item">
+                  <span class="skill-label">Observability & Monitoring</span>
+                  <div class="skill-icons">
+                     <div class="skill-icon-box">
+                        <img src="images/dd.avif" /><span>Datadog</span>
+                     </div>
+                     <div class="skill-icon-box">
+                        <img
+                           src="https://skillicons.dev/icons?i=grafana&theme=light"
+                        /><span>Grafana</span>
+                     </div>
+                     <div class="skill-icon-box">
+                        <img
+                           src="https://skillicons.dev/icons?i=prometheus&theme=light"
+                        /><span>Prometheus</span>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Other Libraries -->
+               <div class="skill-item">
+                  <span class="skill-label">Other Platforms & Libraries</span>
+                  <div class="skill-icons">
+                     <div class="skill-icon-box">
+                        <img
+                           src="https://skillicons.dev/icons?i=kafka&theme=light"
+                        /><span>Kafka</span>
+                     </div>
+                     <div class="skill-icon-box">
+                        <img
+                           src="https://skillicons.dev/icons?i=redux&theme=light"
+                        /><span>Redux</span>
+                     </div>
+                     <div class="skill-icon-box">
+                        <img src="images/react-query.png" /><span
+                           >Tanstack React Query</span
+                        >
+                     </div>
+                     <div class="skill-icon-box">
+                        <img
+                           src="https://skillicons.dev/icons?i=reactivex&theme=light"
+                        /><span>RxJS</span>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Methodologies -->
+               <div class="skill-item">
+                  <span class="skill-label">Methodologies</span>
+                  <div class="skill-icons">
+                     <div class="skill-icon-box">
+                        <img src="images/agile.png" /><span>Agile</span>
+                     </div>
+                     <div class="skill-icon-box">
+                        <img src="images/scrum.png" /><span>Scrum</span>
+                     </div>
+                     <div class="skill-icon-box">
+                        <img src="images/kanban.png" /><span>Kanban</span>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- IDE -->
+               <div class="skill-item">
+                  <span class="skill-label">IDEs</span>
+                  <div class="skill-icons">
+                     <div class="skill-icon-box">
+                        <img
+                           src="https://skillicons.dev/icons?i=idea&theme=light"
+                        /><span>IntelliJ IDEA</span>
+                     </div>
+                     <div class="skill-icon-box">
+                        <img
+                           src="https://skillicons.dev/icons?i=webstorm&theme=light"
+                        /><span>Webstorm</span>
+                     </div>
+                     <div class="skill-icon-box">
+                        <img
+                           src="https://skillicons.dev/icons?i=pycharm&theme=light"
+                        /><span>PyCharm</span>
+                     </div>
+                     <div class="skill-icon-box">
+                        <img
+                           src="https://skillicons.dev/icons?i=vscode&theme=light"
+                        /><span>VS Code</span>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Architectures -->
+               <div class="skill-item">
+                  <span class="skill-label">Architectures</span>
+                  <div class="skill-icons">
+                     <div class="skill-icon-box">
+                        <img src="images/monolithic.png" /><span
+                           >Monolithic</span
+                        >
+                     </div>
+                     <div class="skill-icon-box">
+                        <img src="images/microservices.png" /><span
+                           >Microservices</span
+                        >
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Payment -->
+               <div class="skill-item">
+                  <span class="skill-label">Payment Gateway</span>
+                  <div class="skill-icons">
+                     <div class="skill-icon-box">
+                        <img src="images/stripe.png" /><span>Stripe</span>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Collaboration -->
+               <!--   <div class="skill-item">
+      <span class="skill-label">Communication</span>
+      <div class="skill-icons">
+        <div class="skill-icon-box"><img src="images/slack.png"><span>Slack</span></div>
+        <div class="skill-icon-box"><img src="images/ms-teams.png"><span>Teams</span></div>
+        <div class="skill-icon-box"><img src="images/zoom.png"><span>Zoom</span></div>
+      </div>
+    </div>
+ -->
+            </div>
+         </div>
+         <div class="section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="summary">
+               Results-driven
+               <span class="highlight">Full Stack Developer with 9+ years</span>
+               of expertise in designing and delivering scalable enterprise
+               applications. Specialized in Java, Spring Boot, React, Angular,
+               Node.js and PostgresSQL with proven success in microservices
+               architecture, cloud technologies (AWS, Azure), and DevOps
+               practices. Strong track record of leading projects from concept
+               to deployment, implementing Test-Driven Development (TDD), and
+               optimizing system performance. Experienced in production support,
+               cross-functional collaboration, and delivering cost-effective
+               solutions that enhance operational efficiency and business
+               growth.
+            </p>
+         </div>
+
+         <div class="section">
+            <h2 class="section-title">Professional Experience</h2>
+
+            <div class="experience-item">
+               <div class="job-header">
+                  <div class="job-title">
+                     <img
+                        src="images/cbts_logo.jfif"
+                        alt="CBTS"
+                        style="
+                           width: 34px;
+                           height: 34px;
+                           vertical-align: middle;
+                           margin-right: 8px;
+                        "
+                        onerror="this.style.display='none'"
+                     />
+                     <span class="company-name">CBTS</span> - Senior Full Stack
+                     Consultant
+                  </div>
+                  <div class="job-duration">July 2023 – Present</div>
+               </div>
+               <!-- <div class="company-name">CBTS</div> -->
+
+               <div class="project-title">
+                  Shared Messaging Service (July 2024 – Present)
+               </div>
+               <ul>
+                  <li>
+                     Architected and deployed microservice for SMS notifications
+                     managing claim status updates between GuideWire and
+                     ECS-Vibes systems
+                  </li>
+                  <li>
+                     Implemented Resilience retry mechanism and Spring Scheduler
+                     for enhanced reliability, reducing message delivery failure
+                     rate by 40%
+                  </li>
+                  <li>
+                     Utilized Test-Driven Development (TDD) ensuring 95%+ code
+                     coverage and production-ready quality
+                  </li>
+                  <li>
+                     Optimized bidirectional message workflows including user
+                     response handling (STOP messages) and routing logic
+                  </li>
+               </ul>
+               <p style="font-size: 12px; margin-top: 6px; color: #555">
+                  <strong>Tech Stack:</strong> Java 17, Spring Boot, PostgreSQL,
+                  Docker, Kubernetes, Jenkins, Datadog, Splunk, Kafka
+               </p>
+
+               <div class="project-title">
+                  Claims Fetch Orchestration Service (Mar 2024 – Jun 2024)
+               </div>
+               <ul>
+                  <li>
+                     Designed microservice orchestrating data retrieval from
+                     Legacy and Guide-Wire systems with unified response
+                     architecture
+                  </li>
+                  <li>
+                     Leveraged CompletableFuture for asynchronous API calls,
+                     improving response times by 60% and system throughput
+                  </li>
+                  <li>
+                     Implemented MapStruct for efficient object mapping,
+                     enhancing code maintainability and consistency
+                  </li>
+                  <li>
+                     Developed React-based UI components improving data
+                     visualization and user interaction
+                  </li>
+               </ul>
+               <p style="font-size: 12px; margin-top: 6px; color: #555">
+                  <strong>Tech Stack:</strong> Java 17, Spring Boot, React,
+                  TypeScript, PostgreSQL, AWS, Docker, Kubernetes, Datadog
+               </p>
+
+               <div class="project-title">
+                  Guide-Wire Claims Fetch Service (Nov 2023 – Feb 2024)
+               </div>
+               <ul>
+                  <li>
+                     Led development of microservice retrieving claims data from
+                     Guidewire cloud API with OAuth2 authentication
+                  </li>
+                  <li>
+                     Achieved 50% faster response times through asynchronous API
+                     implementation using CompletableFuture
+                  </li>
+                  <li>
+                     Delivered comprehensive TDD approach ensuring high
+                     reliability and seamless downstream system integration
+                  </li>
+               </ul>
+               <p style="font-size: 12px; margin-top: 6px; color: #555">
+                  <strong>Tech Stack:</strong> Java 17, Spring Boot, OAuth2,
+                  PostgreSQL, AWS, Docker, Kubernetes, Jenkins, Splunk
+               </p>
+
+               <div class="project-title">
+                  Legacy Claims Fetch Service (Jul 2023 – Oct 2023)
+               </div>
+               <ul>
+                  <li>
+                     Engineered microservice extracting data from legacy
+                     database using stored procedures and Spring JDBC
+                  </li>
+                  <li>
+                     Optimized database query performance reducing execution
+                     times by 45% through strategic indexing and caching
+                  </li>
+                  <li>
+                     Ensured scalability to handle increased loads without
+                     performance degradation
+                  </li>
+               </ul>
+               <p style="font-size: 12px; margin-top: 6px; color: #555">
+                  <strong>Tech Stack:</strong> Java 17, Spring Boot, Spring
+                  JDBC, MySQL, MSSQL Server, AWS, Docker, Kubernetes, Datadog
+               </p>
+
+               <!-- <p style="font-size: 13px; margin-top: 8px;"><strong>Technologies:</strong> Java 17, Spring Boot, React, TypeScript, PostgreSQL, MySQL, AWS, Docker, Kubernetes, Datadog, Splunk</p> -->
+            </div>
+
+            <div class="experience-item">
+               <div class="job-header">
+                  <div class="job-title">
+                     <img
+                        src="images/walmart_logo.jfif"
+                        alt="Walmart"
+                        style="
+                           width: 34px;
+                           height: 34px;
+                           vertical-align: middle;
+                           margin-right: 8px;
+                           border-radius: 4px;
+                        "
+                     />
+                     <span class="company-name">WALMART GLOBAL TECH</span> - SDE
+                     III (Full Stack Developer)
+                  </div>
+                  <div class="job-duration">January 2022 – July 2023</div>
+               </div>
+               <!-- <div class="company-name">Walmart Global Tech</div> -->
+
+               <div class="project-title">
+                  Electrode Framework (Open Source) (Mar 2022 – Jun 2023)
+               </div>
+               <ul>
+                  <li>
+                     Contributed to open-source universal React/Node.js
+                     framework standardizing application development structure
+                  </li>
+                  <li>
+                     Implemented key components using React, Redux, and
+                     React-Query optimizing state management and data fetching
+                  </li>
+                  <li>
+                     Enhanced performance through Next.js server-side rendering
+                     (SSR) improving SEO and load times by 40%
+                  </li>
+                  <li>
+                     Collaborated with global open-source community driving
+                     adoption of best practices across enterprise projects
+                  </li>
+               </ul>
+               <p style="font-size: 12px; margin-top: 6px; color: #555">
+                  <strong>Tech Stack:</strong> React, Redux, React-Query,
+                  Next.js, Node.js, TypeScript, JavaScript (ES6)
+               </p>
+
+               <div class="project-title">
+                  DX (Developer Experience Portal) (Jan 2022 – Mar 2022)
+               </div>
+               <ul>
+                  <li>
+                     Built centralized engineering portal increasing developer
+                     productivity by 35% through curated SDLC technical content
+                  </li>
+                  <li>
+                     Developed backend using Java 11, Spring Boot, and JPA with
+                     MySQL integration for efficient data management
+                  </li>
+                  <li>
+                     Created React-based frontend ensuring seamless navigation
+                     across Walmart's internal portals
+                  </li>
+                  <li>
+                     Leveraged Azure, Docker, and Kubernetes for scalable
+                     deployment and orchestration
+                  </li>
+               </ul>
+               <p style="font-size: 12px; margin-top: 6px; color: #555">
+                  <strong>Tech Stack:</strong> Java 11, Spring Boot, JPA, React,
+                  MySQL, Azure, Docker, Kubernetes, Jenkins, Prometheus, Grafana
+               </p>
+
+               <!-- <p style="font-size: 13px; margin-top: 8px;"><strong>Technologies:</strong> Java, Spring Boot, React, Angular, Node.js, Nest.js, PostgreSQL, AWS, Azure, Docker, Kubernetes, Prometheus, Grafana</p> -->
+            </div>
+
+            <div class="experience-item">
+               <div class="job-header">
+                  <div class="job-title">
+                     <img
+                        src="images/persistent_logo.jfif"
+                        alt="Persistent"
+                        style="
+                           width: 34px;
+                           height: 34px;
+                           vertical-align: middle;
+                           margin-right: 8px;
+                           border-radius: 4px;
+                        "
+                     />
+                     <span class="company-name">PERSISTENT SYSTEMS</span> -
+                     Software Engineering Lead
+                  </div>
+                  <div class="job-duration">November 2020 – December 2021</div>
+               </div>
+               <!-- <div class="company-name">Persistent Systems</div> -->
+
+               <ul>
+                  <li>
+                     Led development of DX portal for Walmart improving
+                     developer onboarding efficiency by 40%
+                  </li>
+                  <li>
+                     Architected scalable backend services using Java 11, Spring
+                     Boot, and Hibernate with PostgreSQL
+                  </li>
+                  <li>
+                     Implemented Azure cloud integration ensuring high
+                     availability and performance optimization
+                  </li>
+                  <li>
+                     Managed cross-functional team delivering production-ready
+                     features aligned with enterprise standards
+                  </li>
+               </ul>
+               <p style="font-size: 12px; margin-top: 6px; color: #555">
+                  <strong>Tech Stack:</strong> Java 11, Spring Boot, Hibernate,
+                  React, MySQL, PostgreSQL, Azure, Docker, Jenkins, Splunk,
+                  Datadog
+               </p>
+
+               <!-- <p style="font-size: 13px; margin-top: 8px;"><strong>Technologies:</strong> Java, Spring Boot, Hibernate, React, MySQL, PostgreSQL, AWS, Azure, Docker, Jenkins</p> -->
+            </div>
+
+            <div class="experience-item">
+               <div class="job-header">
+                  <div class="job-title">
+                     <img
+                        src="images/saral_logo.jfif"
+                        alt="Saral Tech"
+                        style="
+                           width: 34px;
+                           height: 34px;
+                           vertical-align: middle;
+                           margin-right: 8px;
+                           border-radius: 4px;
+                        "
+                     />
+                     <span class="company-name">SARAL TECHNOLOGIES</span> -
+                     Software Engineer (Full Stack Developer)
+                  </div>
+                  <div class="job-duration">March 2016 – November 2020</div>
+               </div>
+               <!-- <div class="company-name">Saral Technologies</div> -->
+
+               <div class="project-title">Key Projects:</div>
+               <ul>
+                  <li>
+                     <strong>Routine-AI (Jan 2020 - Nov 2020):</strong> Created
+                     AI-driven data quality monitoring solution supporting
+                     MySQL, Oracle, Snowflake, Azure, and MSSQL integration
+                     <br /><em style="font-size: 11px; color: #666"
+                        >Tech Stack: Java 11, Spring Boot, JPA, Angular,
+                        PostgreSQL, AWS</em
+                     >
+                  </li>
+
+                  <li>
+                     <strong
+                        >IP3 - Allied Security Trust (Jan 2019 - Dec
+                        2019):</strong
+                     >
+                     Built patent bidding platform for Fortune 500 companies
+                     (Google, Facebook, Microsoft) managing complex auction
+                     workflows <br /><em style="font-size: 11px; color: #666"
+                        >Tech Stack: Java 11, Spring Boot, JPA, Angular,
+                        PostgreSQL, AWS</em
+                     >
+                  </li>
+
+                  <li>
+                     <strong>Dueno (Jan 2019 - Dec 2019):</strong> Developed
+                     comprehensive property management portal handling rentals,
+                     agreements, and payments <br /><em
+                        style="font-size: 11px; color: #666"
+                        >Tech Stack: Java 11, Spring Boot, JPA, Angular,
+                        PostgreSQL, AWS</em
+                     >
+                  </li>
+
+                  <li>
+                     <strong>BrilliantFIT (Mar 2016 - Dec 2018):</strong>
+                     Delivered responsive career planning platform with
+                     DNA-based analysis <br /><em
+                        style="font-size: 11px; color: #666"
+                        >Tech Stack: Java 8, Spring Boot, Hibernate, Angular,
+                        PostgreSQL, AWS</em
+                     >
+                  </li>
+               </ul>
+
+               <p style="font-size: 13px; margin-top: 8px">
+                  <strong>Technologies:</strong> Java, Spring Boot, Hibernate,
+                  Angular, React, Node.js, PostgreSQL, MySQL, AWS, Azure, Docker
+               </p>
+            </div>
+         </div>
+
+         <div class="section" style="margin-bottom: 50px">
+            <h2 class="section-title">Education</h2>
+
+            <div class="education-item">
+               <div class="degree">
+                  <img
+                     src="images/alchemy_logo.jfif"
+                     alt="Alchemy University"
+                     style="
+                        width: 30px;
+                        height: 30px;
+                        vertical-align: middle;
+                        margin-right: 8px;
+                        border-radius: 4px;
+                     "
+                  />
+                  Web3 & Blockchain Certification
+               </div>
+               <div class="institution">Alchemy University</div>
+               <div class="year">October 2022</div>
+            </div>
+
+            <div class="education-item">
+               <div class="degree">
+                  <img
+                     src="images/cdacindia_logo.jfif"
+                     alt="CDAC"
+                     style="
+                        width: 30px;
+                        height: 30px;
+                        vertical-align: middle;
+                        margin-right: 8px;
+                        border-radius: 4px;
+                     "
+                  />
+                  C-DAC PG Diploma in Advanced Computing (DAC)
+               </div>
+               <div class="institution">
+                  SunBeam Institute of Information Technology, Pune-Karad
+               </div>
+               <div class="year">2015 – 2016</div>
+            </div>
+
+            <div class="education-item">
+               <div class="degree">
+                  <img
+                     src="images/orchid_logo.jfif"
+                     alt="NK Orchid"
+                     style="
+                        width: 30px;
+                        height: 30px;
+                        vertical-align: middle;
+                        margin-right: 8px;
+                        border-radius: 4px;
+                     "
+                  />
+                  Master of Engineering (M.Eng.) - Computer Science & Technology
+               </div>
+               <div class="institution">
+                  N.K. Orchid College of Engineering and Technology, Solapur
+               </div>
+               <div class="year">2013 – 2015</div>
+            </div>
+
+            <div class="education-item">
+               <div class="degree">
+                  <img
+                     src="images/shivaji_logo.jfif"
+                     alt="Shivaji University"
+                     style="
+                        width: 30px;
+                        height: 30px;
+                        vertical-align: middle;
+                        margin-right: 8px;
+                        border-radius: 4px;
+                     "
+                  />
+                  Bachelor of Technology (B.Tech.) - Computer Science &
+                  Technology
+               </div>
+               <div class="institution">
+                  Department of Technology, Shivaji University, Kolhapur
+               </div>
+               <div class="year">2009 – 2013</div>
+            </div>
+         </div>
+
+         <div class="section" style="margin-bottom: 50px">
+            <h2 class="section-title">Certifications</h2>
+            <ul class="certifications-list">
+               <li>Angular: Best Practices</li>
+               <li>Accelerating Through React</li>
+               <li>Spring with JPA and Hibernate</li>
+               <li>Shaping Up with React</li>
+               <li>Angular Fundamentals</li>
+               <li>Web3 & Blockchain (Alchemy)</li>
+            </ul>
+         </div>
+
+         <div class="section">
+            <h2 class="section-title">Honors & Awards</h2>
+            <table class="awards-table">
+               <thead>
+                  <tr>
+                     <th>Year</th>
+                     <th>Achievement</th>
+                     <th>Competition</th>
+                     <th>Organizer</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>2020</td>
+                     <td>
+                        <b> Round 1 Qualification </b>
+                     </td>
+
+                     <td>Google Code Jam</td>
+                     <td>
+                        <img
+                           src="images/googlelogo.png"
+                           alt="Google"
+                           style="
+                              width: 50px;
+                              vertical-align: middle;
+                              margin-right: 8px;
+                           "
+                        />
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>2019</td>
+                     <td>
+                        <b> World Rank 4807</b>
+                     </td>
+                     <td>Google Code Jam</td>
+                     <td>
+                        <img
+                           src="images/googlelogo.png"
+                           alt="Google"
+                           style="
+                              width: 50px;
+                              vertical-align: middle;
+                              margin-right: 8px;
+                           "
+                        />
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>2015</td>
+                     <td>
+                        <img
+                           src="https://www.cdac.in/img/C-DAC.jpg"
+                           alt="CDAC"
+                           style="
+                              width: 40px;
+                              vertical-align: middle;
+                              margin-right: 8px;
+                           "
+                           onerror="this.style.display='none'"
+                        />
+                        <b> Winner - Mission Java </b>
+                     </td>
+                     <td>National Competition</td>
+                     <td>
+                        <img
+                           src="images/cdacindia_logo.jfif"
+                           alt="CDAC"
+                           style="
+                              width: 30px;
+                              vertical-align: middle;
+                              margin-right: 8px;
+                           "
+                           onerror="this.style.display='none'"
+                        />
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+
+         <div class="section">
+            <h2 class="section-title">Publications</h2>
+            <p style="font-size: 13px; color: #555">
+               <strong>Basugade, S.</strong> and Bag, V. (2015). "Recommendation
+               system with detection and prevention of malicious feedback
+               rating."
+               <em
+                  >International Journal of Engineering Sciences Research
+                  Technology</em
+               >, August 2015.
+            </p>
+         </div>
+      </div>
+   </body>
+</html>
